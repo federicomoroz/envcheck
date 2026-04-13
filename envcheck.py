@@ -31,7 +31,10 @@ def parse_env_file(path: str) -> dict[str, str]:
                 continue
             if "=" in line:
                 key, _, value = line.partition("=")
-                result[key.strip()] = value.strip()
+                value = value.strip()
+                if len(value) >= 2 and value[0] == value[-1] and value[0] in ('"', "'"):
+                    value = value[1:-1]
+                result[key.strip()] = value
     return result
 
 
