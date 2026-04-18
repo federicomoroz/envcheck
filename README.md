@@ -4,6 +4,10 @@ A zero-dependency CLI tool that validates your `.env` file against `.env.example
 
 ---
 
+![Terminal output](screenshots/01_terminal.png)
+
+---
+
 ## The problem
 
 Every project has a `.env.example` that declares which variables are required. In practice, developers forget to add new variables to their local `.env`, or leave them empty. These omissions only surface at runtime — often in production.
@@ -73,6 +77,8 @@ python envcheck.py
 ---
 
 ## Architecture
+
+![Architecture diagram](screenshots/02_architecture.png)
 
 Despite being a single-file tool, the code is structured in four explicit layers following **SOLID principles strictly**. Every class has exactly one reason to change.
 
